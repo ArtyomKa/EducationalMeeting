@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAkka", "HelloAkka\HelloAkka.csproj", "{26F39715-2430-4458-B676-9FA0B012DF5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAkkaRemote.WorkerCreator", "HelloAkkaRemote.WorkerCreator\HelloAkkaRemote.WorkerCreator.csproj", "{52CA2B58-890E-48F4-8625-AA58FB01FA6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAkkaRemote.Actors", "HelloAkkaRemote.Actors\HelloAkkaRemote.Actors.csproj", "{45338CEB-B5AC-45A7-8F05-92BC07587C3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAkkaRemote.Client", "HelloAkkaRemote.Client\HelloAkkaRemote.Client.csproj", "{DE4387FA-5061-4B47-96C1-D56F53E4AA42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{45338CEB-B5AC-45A7-8F05-92BC07587C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45338CEB-B5AC-45A7-8F05-92BC07587C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45338CEB-B5AC-45A7-8F05-92BC07587C3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4387FA-5061-4B47-96C1-D56F53E4AA42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4387FA-5061-4B47-96C1-D56F53E4AA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4387FA-5061-4B47-96C1-D56F53E4AA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4387FA-5061-4B47-96C1-D56F53E4AA42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

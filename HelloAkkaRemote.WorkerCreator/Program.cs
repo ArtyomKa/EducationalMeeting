@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using Akka.Actor;
 using Akka.Configuration;
+using System;
+using HelloAkkaRemote.Actors;
 
 namespace HelloAkkaRemote.WorkerCreator
 {
@@ -15,15 +17,12 @@ namespace HelloAkkaRemote.WorkerCreator
                 config = ConfigurationFactory.ParseString(configString);
             }
             ActorSystem actorSystem = ActorSystem.Create("MyActorSystem", config);
-            actorSystem.ActorOf(Props.Create<Player>(), "Player");
+            Console.WriteLine("Started system {0}",actorSystem.Name);
+            //actorSystem.ActorOf(Props.Create<Player>(), "Player");
+
+            Console.ReadLine();
         }
 
-        public class Player : ReceiveActor
-        {
-            public Player()
-            {
-                Receive<string>(s => Sender.Tell("Hello"));
-            }
-        }
+       
     }
 }

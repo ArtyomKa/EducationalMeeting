@@ -1,4 +1,5 @@
 ﻿using Akka.Actor;
+using System;
 
 namespace HelloAkkaRemote.Actors
 {
@@ -6,7 +7,11 @@ namespace HelloAkkaRemote.Actors
     {
         public Player()
         {
-            Receive<string>(s => s == "ping", _ => Sender.Tell("pong"));
+            Receive<string>(s => s == "ping", _ => 
+                {
+                    Console.WriteLine("Got ping. sending pong");
+                    Sender.Tell("pong");
+                });
         }
     }
 }
