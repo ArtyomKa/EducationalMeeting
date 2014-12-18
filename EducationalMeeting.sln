@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAkka", "HelloAkka\Hell
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAkkaRemote.WorkerCreator", "HelloAkkaRemote.WorkerCreator\HelloAkkaRemote.WorkerCreator.csproj", "{52CA2B58-890E-48F4-8625-AA58FB01FA6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAkkaRemote.Actors", "HelloAkkaRemote.Actors\HelloAkkaRemote.Actors.csproj", "{45338CEB-B5AC-45A7-8F05-92BC07587C3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{52CA2B58-890E-48F4-8625-AA58FB01FA6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52CA2B58-890E-48F4-8625-AA58FB01FA6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52CA2B58-890E-48F4-8625-AA58FB01FA6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45338CEB-B5AC-45A7-8F05-92BC07587C3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45338CEB-B5AC-45A7-8F05-92BC07587C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45338CEB-B5AC-45A7-8F05-92BC07587C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45338CEB-B5AC-45A7-8F05-92BC07587C3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
