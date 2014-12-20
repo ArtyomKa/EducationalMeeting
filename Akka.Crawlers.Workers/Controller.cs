@@ -18,6 +18,7 @@ namespace Akka.Crawlers.Workers
         static private int MaxDepth = 3;
         public Controller()
         {
+            log4net.LogManager.GetLogger("controller").Debug("Created Controller " + GetHashCode());
             int numberOfDownloaders;
             if (!int.TryParse(ConfigurationManager.AppSettings["numberOfDownloaders"], out numberOfDownloaders)) numberOfDownloaders = 2;
             m_Downloader = Context.ActorOf(new RoundRobinPool(numberOfDownloaders).Props(Props.Create<Downloader>()),"downloaders");
