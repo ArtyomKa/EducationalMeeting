@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAkkaRemote.Actors", "H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAkkaRemote.Client", "HelloAkkaRemote.Client\HelloAkkaRemote.Client.csproj", "{DE4387FA-5061-4B47-96C1-D56F53E4AA42}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Crawler", "Crawler", "{62942499-5F70-45DB-8C74-728913BFB09E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akka.Crawlers.Workers", "Akka.Crawlers.Workers\Akka.Crawlers.Workers.csproj", "{F8519C46-AD09-4E56-83AA-92FE76615EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akka.Crawlers.Runner", "Akka.Crawlers.Runner\Akka.Crawlers.Runner.csproj", "{AF1082B5-5E4A-49A6-99CC-1D504AE69E60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +39,20 @@ Global
 		{DE4387FA-5061-4B47-96C1-D56F53E4AA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE4387FA-5061-4B47-96C1-D56F53E4AA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE4387FA-5061-4B47-96C1-D56F53E4AA42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8519C46-AD09-4E56-83AA-92FE76615EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8519C46-AD09-4E56-83AA-92FE76615EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8519C46-AD09-4E56-83AA-92FE76615EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8519C46-AD09-4E56-83AA-92FE76615EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF1082B5-5E4A-49A6-99CC-1D504AE69E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF1082B5-5E4A-49A6-99CC-1D504AE69E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF1082B5-5E4A-49A6-99CC-1D504AE69E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF1082B5-5E4A-49A6-99CC-1D504AE69E60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F8519C46-AD09-4E56-83AA-92FE76615EAA} = {62942499-5F70-45DB-8C74-728913BFB09E}
+		{AF1082B5-5E4A-49A6-99CC-1D504AE69E60} = {62942499-5F70-45DB-8C74-728913BFB09E}
 	EndGlobalSection
 EndGlobal
