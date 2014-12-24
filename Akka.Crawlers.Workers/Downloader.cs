@@ -28,10 +28,6 @@ namespace Akka.Crawlers.Workers
                 string page = DownloadAsStr(message.Url);
                 if (page != null)
                 {
-                    if (random.NextDouble() < 0.2)
-                    {
-                        throw new Exception("Some Exception");
-                    }
                     parsers.Tell(new ParseHtml(message.Depth, page, message.Url ,Sender));
                 }
                 
