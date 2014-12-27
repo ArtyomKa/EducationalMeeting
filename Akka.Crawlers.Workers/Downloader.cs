@@ -28,7 +28,7 @@ namespace Akka.Crawlers.Workers
                 string page = DownloadAsStr(message.Url);
                 if (page != null)
                 {
-                    parsers.Tell(new ParseHtml(message.Depth, page, message.Url ,Sender));
+                    parsers.Tell(new ParseHtml(message.Depth, page, message.Url),Sender);
                 }
                 
             });

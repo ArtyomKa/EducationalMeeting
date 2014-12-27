@@ -12,7 +12,7 @@ namespace Akka.Crawlers.Workers
         public Parser()
         {
             log4net.LogManager.GetLogger("parser").Debug("Created Parser " + GetHashCode());
-            Receive<ParseHtml>(message => message.Controller.Tell(new DiscoveredLinks(message.Depth,message.Url, ExtractLinks(message.Depth,message.Url,message.Html))));
+            Receive<ParseHtml>(message => Sender.Tell(new DiscoveredLinks(message.Depth,message.Url, ExtractLinks(message.Depth,message.Url,message.Html))));
         }
 
         private List<string> ExtractLinks(int depth,string url,string htmlString)

@@ -22,7 +22,11 @@ namespace Akka.Crawlers.Workers
             int numberOfDownloaders;
             if (!int.TryParse(ConfigurationManager.AppSettings["numberOfDownloaders"], out numberOfDownloaders)) numberOfDownloaders = 2;
             m_Downloader = Context.ActorOf(new RoundRobinPool(numberOfDownloaders).Props(Props.Create<Downloader>()),"downloaders");
-            Receive<string>(s => m_Downloader.Tell(new DownloadPage(0,s)));
+            Receive<string>(s => 
+                {
+                    log4net.LogManager.GetLogger("controller").Debug("Received a new link " + s);
+                    m_Downloader.Tell(new DownloadPage(0, s));
+                });
             Receive<DiscoveredLinks>(message => 
             {
                 foreach (string link in message.Links)
