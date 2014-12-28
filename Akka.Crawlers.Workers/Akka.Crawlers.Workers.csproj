@@ -58,11 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller.cs" />
-    <Compile Include="Messages\DiscoveredLinks.cs" />
+    <Compile Include="Messages\DiscoveredResources.cs" />
     <Compile Include="Downloader.cs" />
     <Compile Include="Messages\DownloadPage.cs" />
     <Compile Include="Messages\ParseHtml.cs" />
-    <Compile Include="Parser.cs" />
+    <Compile Include="Messages\Parser.cs" />
+    <Compile Include="Messages\Persist.cs" />
+    <Compile Include="Persister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
