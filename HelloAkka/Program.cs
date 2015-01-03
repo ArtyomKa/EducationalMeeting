@@ -12,15 +12,25 @@ namespace HelloAkka
         static void Main(string[] args)
         {
             ActorSystem system = ActorSystem.Create("Hello");
-            var playerOne = system.ActorOf(Props.Create<MessagePrinter>(),"MessagePrinter");
+            ActorRef playerOne = system.ActorOf(Props.Create<MessagePrinter>(),"MessagePrinter");
 
-            string input = "";
-            while(!(input = Console.ReadLine()).Equals("quit"))
+            bool shouldNotQuit = true;
+            do
             {
-                Console.WriteLine("Sending {0} from thread {1}", input,Thread.CurrentThread.ManagedThreadId);
-                playerOne.Tell(new Message(input));
-                
-            }
+                string input = "";
+                Console.WriteLine("Enter a message: ");
+                input = Console.ReadLine();
+                if (!input.Equals("quit"))
+                {
+                    Console.WriteLine("Sending {0} from thread {1}", input, Thread.CurrentThread.ManagedThreadId);
+                    playerOne.Tell(new Message(input));
+                }
+                else
+                {
+                    shouldNotQuit = false;
+                }
+
+            } while (shouldNotQuit);
             
 
 

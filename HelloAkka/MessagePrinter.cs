@@ -12,7 +12,7 @@ namespace HelloAkka
         
         public MessagePrinter()
         {
-            Receive<Message>(message => Console.WriteLine("{0} Received {1}", Thread.CurrentThread.ManagedThreadId, message.Text));
+            Receive<Message>(message => Console.WriteLine("Received {0} in thread {1} ", message.Text, Thread.CurrentThread.ManagedThreadId));
         }
 
     }
