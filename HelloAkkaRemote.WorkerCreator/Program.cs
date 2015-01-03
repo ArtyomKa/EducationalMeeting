@@ -18,7 +18,7 @@ namespace HelloAkkaRemote.WorkerCreator
             }
             ActorSystem actorSystem = ActorSystem.Create("MyActorSystem", config);
             Console.WriteLine("Started system {0}",actorSystem.Name);
-            //actorSystem.ActorOf(Props.Create<Player>(), "Player");
+            
 
             Console.ReadLine();
         }
