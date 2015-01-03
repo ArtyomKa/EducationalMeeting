@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+
 namespace HelloAkka
 {
     class Program
@@ -12,8 +13,8 @@ namespace HelloAkka
         static void Main(string[] args)
         {
             ActorSystem system = ActorSystem.Create("Hello");
-            ActorRef playerOne = system.ActorOf(Props.Create<MessagePrinter>(),"MessagePrinter");
-
+            ActorRef printer = system.ActorOf(Props.Create<MessagePrinter>(),"MessagePrinter");
+            
             bool shouldNotQuit = true;
             do
             {
@@ -23,7 +24,7 @@ namespace HelloAkka
                 if (!input.Equals("quit"))
                 {
                     Console.WriteLine("Sending {0} from thread {1}", input, Thread.CurrentThread.ManagedThreadId);
-                    playerOne.Tell(new Message(input));
+                    printer.Tell(new Message(input));
                 }
                 else
                 {
