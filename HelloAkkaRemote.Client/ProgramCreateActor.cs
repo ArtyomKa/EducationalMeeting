@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HelloAkka.Common;
 using HelloAkkaRemote.Actors;
 using System.Threading;
 namespace HelloAkkaRemote.Client

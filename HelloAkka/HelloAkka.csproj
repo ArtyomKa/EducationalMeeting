@@ -59,7 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Message.cs" />
     <Compile Include="MessagePrinter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +73,12 @@
   <ItemGroup>
     <Content Include="licenses\license.txt" />
     <Content Include="licenses\protoc-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelloAkka.Common\HelloAkka.Common.csproj">
+      <Project>{c3c025d9-f8e6-42a1-b8c9-7e13f7b9348f}</Project>
+      <Name>HelloAkka.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAkka", "HelloAkka\HelloAkka.csproj", "{26F39715-2430-4458-B676-9FA0B012DF5A}"
 EndProject
@@ -18,6 +18,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Akka.Crawlers.Runner", "Akka.Crawlers.Runner\Akka.Crawlers.Runner.csproj", "{AF1082B5-5E4A-49A6-99CC-1D504AE69E60}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Remote", "Remote", "{03DB88C8-7BFB-4283-A044-5A301334C384}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FaultTolerance", "FaultTolerance", "{9949F9CF-AF70-4260-B827-7211BF431A0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAkka.FaultTolerance", "HelloAkka.FaultTolerance\HelloAkka.FaultTolerance.csproj", "{E23FF24A-B73E-4206-AEB4-AA50B0FF458E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloAkka.Common", "HelloAkka.Common\HelloAkka.Common.csproj", "{C3C025D9-F8E6-42A1-B8C9-7E13F7B9348F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,15 +55,24 @@ Global
 		{AF1082B5-5E4A-49A6-99CC-1D504AE69E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF1082B5-5E4A-49A6-99CC-1D504AE69E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF1082B5-5E4A-49A6-99CC-1D504AE69E60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E23FF24A-B73E-4206-AEB4-AA50B0FF458E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E23FF24A-B73E-4206-AEB4-AA50B0FF458E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E23FF24A-B73E-4206-AEB4-AA50B0FF458E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E23FF24A-B73E-4206-AEB4-AA50B0FF458E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3C025D9-F8E6-42A1-B8C9-7E13F7B9348F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3C025D9-F8E6-42A1-B8C9-7E13F7B9348F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3C025D9-F8E6-42A1-B8C9-7E13F7B9348F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3C025D9-F8E6-42A1-B8C9-7E13F7B9348F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{52CA2B58-890E-48F4-8625-AA58FB01FA6D} = {03DB88C8-7BFB-4283-A044-5A301334C384}
 		{45338CEB-B5AC-45A7-8F05-92BC07587C3C} = {03DB88C8-7BFB-4283-A044-5A301334C384}
 		{DE4387FA-5061-4B47-96C1-D56F53E4AA42} = {03DB88C8-7BFB-4283-A044-5A301334C384}
+		{52CA2B58-890E-48F4-8625-AA58FB01FA6D} = {03DB88C8-7BFB-4283-A044-5A301334C384}
 		{F8519C46-AD09-4E56-83AA-92FE76615EAA} = {62942499-5F70-45DB-8C74-728913BFB09E}
 		{AF1082B5-5E4A-49A6-99CC-1D504AE69E60} = {62942499-5F70-45DB-8C74-728913BFB09E}
+		{E23FF24A-B73E-4206-AEB4-AA50B0FF458E} = {9949F9CF-AF70-4260-B827-7211BF431A0A}
 	EndGlobalSection
 EndGlobal

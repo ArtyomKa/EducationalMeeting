@@ -1,11 +1,7 @@
 ﻿using Akka.Actor;
 using Akka.Configuration;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HelloAkkaRemote.Actors;
+using HelloAkka.Common;
 using System.Threading;
 namespace HelloAkkaRemote.Client
 {
@@ -16,7 +12,7 @@ namespace HelloAkkaRemote.Client
         public static void Run()
         {
 
-            string config = @"akka {
+            const string config = @"akka {
                                 actor {
                                     provider = ""Akka.Remote.RemoteActorRefProvider,Akka.Remote""
                                 }

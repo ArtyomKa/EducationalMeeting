@@ -1,5 +1,6 @@
 ﻿using Akka.Actor;
 using System;
+using HelloAkka.Common;
 
 namespace HelloAkkaRemote.Actors
 {

@@ -80,6 +80,10 @@
     <Content Include="licenses\protoc-license.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HelloAkka.Common\HelloAkka.Common.csproj">
+      <Project>{c3c025d9-f8e6-42a1-b8c9-7e13f7b9348f}</Project>
+      <Name>HelloAkka.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HelloAkkaRemote.Actors\HelloAkkaRemote.Actors.csproj">
       <Project>{45338ceb-b5ac-45a7-8f05-92bc07587c3c}</Project>
       <Name>HelloAkkaRemote.Actors</Name>
