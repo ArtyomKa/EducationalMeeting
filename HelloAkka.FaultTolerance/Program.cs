@@ -14,27 +14,41 @@ namespace HelloAkka.FaultTolerance
         public static void Main(string[] args)
         {
             ActorSystem system = ActorSystem.Create("Hello");
-            Props props = new Props(typeof(MessagePrinter)).WithSupervisorStrategy(CreateSupervisionStrategy());
-            ActorRef printer = system.ActorOf(props, "MessagePrinter");
+            
+            ActorRef mainActor = system.ActorOf(new Props(typeof(Forwarder)).WithSupervisorStrategy(CreateSupervisionStrategy()), "MainActor");
             
             
             string input = "";
             while (ReadUserInputUntillQuit("Enter a Message", out input))
             {
                 Console.WriteLine("Sending {0} from thread {1}", input, Thread.CurrentThread.ManagedThreadId);
-                printer.Tell(new Message(input));
+                mainActor.Tell(input);
 
             }
    
         }
-
         private static SupervisorStrategy CreateSupervisionStrategy()
         {
-            return new OneForOneStrategy(exception =>
+            return new OneForOneStrategy(e =>
             {
-                if(exception is )
+
+                if (e.Message.Equals("Very Bad!!!"))
+                {
+                    return Directive.Restart;
+                }
+                if (e.Message.Equals("Good luck with it!"))
+                {
+                    return Directive.Escalate;
+                }
+                else //Probably not so bad
+                {
+                    return Directive.Resume;
+                }
+
             });
         }
+
+       
         private static bool ReadUserInputUntillQuit(string message, out string input)
         {
             Console.WriteLine("Enter a message: ");
@@ -43,58 +57,7 @@ namespace HelloAkka.FaultTolerance
         }
      }
 
-    class MainActor : ReceiveActor
-    {
-        public MainActor()
-        {
-            Receive<string>(s => s.Equals("Begin"), _ =>
-            {
-                ActorRef actorRef = Context.ActorOf(Props.Create<MessagePrinter>(), "MessagePrinter");
-            });
-        }
-    }
-    class MessagePrinter : ReceiveActor
-    {
-        public MessagePrinter()
-        {
-            Receive<Message>(s => s.Text.Equals("fail") , s => Fail());
-            Receive<Message>(message => Console.WriteLine("Received {0} in thread {1} ", message.Text, Thread.CurrentThread.ManagedThreadId));
-
-        }
-        
-        protected override void PreStart()
-        {
-            base.PreStart();
-            DisplayColoredMessage(ConsoleColor.DarkGreen, "Starting MessagePrinter.");
-        }
-
-
-        protected override void PreRestart(Exception reason, object message)
-        {
-            base.PreRestart(reason, message);
-            DisplayColoredMessage(ConsoleColor.DarkGreen, "Restarting MessagePrinter.");
-
-        }
-
-        protected override void PostRestart(Exception reason)
-        {
-            base.PostRestart(reason);
-            DisplayColoredMessage(ConsoleColor.DarkGreen, "MessagePrinter Restarted.");
-        }
-
-
-        private static void DisplayColoredMessage(ConsoleColor messageColor, string message)
-        {
-            ConsoleColor foregroundColor = Console.ForegroundColor;
-            Console.ForegroundColor = messageColor;
-            Console.WriteLine(message);
-            Console.ForegroundColor = foregroundColor;
-        }
-
-        private void Fail()
-        {
-            throw new Exception("Message Printer Failed");
-        }
-    }
+    
+    
 
 }
