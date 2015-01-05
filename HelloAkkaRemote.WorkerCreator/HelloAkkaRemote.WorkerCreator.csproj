@@ -36,9 +36,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\akka.net\src\core\Akka\bin\Debug\Akka.dll</HintPath>
     </Reference>
-    <Reference Include="Akka.Remote, Version=0.7.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\akka.net\src\core\Akka.Remote\bin\Debug\Akka.Remote.dll</HintPath>
+    <Reference Include="Akka.Remote">
+      <HintPath>..\packages\Akka.Remote.0.7.1\lib\net45\Akka.Remote.dll</HintPath>
     </Reference>
     <Reference Include="Google.ProtocolBuffers">
       <HintPath>..\packages\Google.ProtocolBuffers.2.4.1.521\lib\net40\Google.ProtocolBuffers.dll</HintPath>

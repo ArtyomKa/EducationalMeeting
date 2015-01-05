@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HelloAkka.FaultTolerance
 {
-    class MessagePrinter : ReceiveActor
+    public class MessagePrinter : ReceiveActor
     {
         private int m_Counter = 0;
         public MessagePrinter()

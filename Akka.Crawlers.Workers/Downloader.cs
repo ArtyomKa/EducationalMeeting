@@ -2,34 +2,29 @@
 using Akka.Crawlers.Workers.Messages;
 using Akka.Routing;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using log4net;
 namespace Akka.Crawlers.Workers
 {
     class Downloader : ReceiveActor
     {
-
-        ILog m_logger = LogManager.GetLogger("downloader");
-        ActorRef m_parsers;
+        readonly ILog m_Logger = LogManager.GetLogger("downloader");
+        ActorRef m_Parsers;
         public Downloader()
         {
-            m_logger.Debug("Created Debugger " + GetHashCode());
+
+            Receive<DownloadPage>(message => DownloadAsStr(message.Url,message.Depth,Sender));            
+        }
+
+        protected override void PreStart()
+        {
+            base.PreStart();
+            m_Logger.Debug("Created Debugger " + GetHashCode());
             int numberOfParsers;
             if (!int.TryParse(ConfigurationManager.AppSettings["numberOfParsers"], out numberOfParsers)) numberOfParsers = 2;
-            m_parsers = Context.ActorOf(new RoundRobinPool(numberOfParsers).Props(Props.Create<Parser>()),"parsers");
-            Random random = new Random();
-            Receive<DownloadPage>(message =>
-            {
-                DownloadAsStr(message.Url,message.Depth,Sender);
-                
-            });
-            
+            m_Parsers = Context.ActorOf(new RoundRobinPool(numberOfParsers).Props(Props.Create<Parser>()), "parsers");
         }
 
         private async void DownloadAsStr(string strURL, int depth, ActorRef sender)
@@ -48,7 +43,7 @@ namespace Akka.Crawlers.Workers
                 Console.WriteLine("Finished Downloading " + strURL);
                 if (strResult != null)
                 {
-                    m_parsers.Tell(new ParseHtml(depth, strResult, strURL), sender);
+                    m_Parsers.Tell(new ParseHtml(depth, strResult, strURL), sender);
                 }
                 
             }
@@ -64,12 +59,12 @@ namespace Akka.Crawlers.Workers
         protected override void PreRestart(Exception reason, object message)
         {
             base.PreRestart(reason, message);
-            m_logger.Debug("Restarting Debugger " + GetHashCode());
+            m_Logger.Debug("Restarting Debugger " + GetHashCode());
         }
         protected override void PostRestart(Exception reason)
         {
             base.PostRestart(reason);
-            m_logger.Debug("Debugger " + GetHashCode() + " Restarted");
+            m_Logger.Debug("Debugger " + GetHashCode() + " Restarted");
         }
         
         

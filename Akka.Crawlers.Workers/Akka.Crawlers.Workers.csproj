@@ -71,6 +71,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelloAkkaRemote.Actors\HelloAkkaRemote.Actors.csproj">
+      <Project>{45338CEB-B5AC-45A7-8F05-92BC07587C3C}</Project>
+      <Name>HelloAkkaRemote.Actors</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

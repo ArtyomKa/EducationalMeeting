@@ -29,7 +29,7 @@ namespace HelloAkkaRemote.Client
             ActorSystem system = ActorSystem.Create("MyActorSystem", ConfigurationFactory.ParseString(config));
 
             var printer =  system.ActorSelection(@"akka.tcp://MyActorSystem@localhost:8095/user/MessagePrinter");
-
+            
             string input = "";
             while (ReadUserInputUntillQuit("Enter a Message", out input))
             {

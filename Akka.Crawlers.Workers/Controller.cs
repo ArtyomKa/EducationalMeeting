@@ -16,7 +16,7 @@ namespace Akka.Crawlers.Workers
         private ActorRef m_Downloader;
         private readonly ActorRef m_Persister;
         private readonly HashSet<string> m_VisitedUrls = new HashSet<string>();
-        static private int MaxDepth = 3;
+        private const int MaxDepth = 3;
         public Controller()
         {
             log4net.LogManager.GetLogger("controller").Debug("Created Controller " + GetHashCode());

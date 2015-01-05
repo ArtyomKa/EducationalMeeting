@@ -38,7 +38,7 @@ namespace HelloAkkaRemote.Client
             ActorSystem system = ActorSystem.Create("MyActorSystem", ConfigurationFactory.ParseString(config));
 
             var printer = system.ActorOf(Props.Create<MessagePrinter>(), "MessagePrinter");
-
+            
             string input = "";
             while (ReadUserInputUntillQuit("Enter a Message", out input))
             {
