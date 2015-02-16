@@ -8,6 +8,7 @@ namespace HelloAkkaRemote.Actors
     {
         public MessagePrinter()
         {
+
             Receive<Message>(s => Console.WriteLine(s.Text));
         }
     }
